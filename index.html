@@ -11,7 +11,15 @@
         display: inline-block;
         transition: transform 0.15s;
       }
-      .hamBurger::before,
+      .hamBurger::before {
+        content: "";
+        position: absolute;
+        width: 4rem;
+        height: 0.5rem;
+        background-color: black;
+        border-radius: 9999px;
+        transition: all 0.15s;
+      }
       .hamBurger::after {
         content: "";
         position: absolute;
@@ -21,6 +29,7 @@
         border-radius: 9999px;
         transition: all 0.15s;
       }
+
       .hamBurger::before {
         transform: translateY(-1rem);
       }
@@ -31,20 +40,23 @@
         transform: rotate(45deg);
       }
       .hamburger-toggle .hamBurger::before {
-        transform: rotate(-90deg) translateX(-1rem);
+        transform: rotate(-90deg) translateX(-0.2rem);
       }
       .hamburger-toggle .hamBurger::after {
-        transform: rotate(-90deg) translateX(1rem);
+        transform: rotate(-90deg) translateX(0.1rem);
       }
     </style>
   </head>
   <body>
     <nav class="bg-gray-300 flex flex-row justify-between">
-      <div class="logo w-2/4  p-4">
+      <div class="logo w-2/4 p-4 text-2xl sm:text-2xl">
         <!-- dummy logo  -->
         <h1 class="ml-4">Logo</h1>
       </div>
-      <div id="navLinks" class="navLinks w-2/4 h-40 hidden absolute p-4 top-14  w-full bg-gray-400  flex-col sm:h-auto sm:bg-gray-300 sm:relative sm:top-0 sm:flex-row list-none sm:justify-evenly gap-4 sm:flex  ">
+      <div
+        id="navLinks"
+        class="navLinks w-2/4 h-4/5 hidden absolute p-4 top-14 w-full bg-gray-400 flex-col justify-center items-center text-xl sm:text-lg sm:h-auto sm:bg-gray-300 sm:relative sm:top-0 sm:flex-row list-none sm:justify-evenly gap-4 sm:flex"
+      >
         <li><a href="">Home</a></li>
         <li><a href="">About</a></li>
         <li><a href="">Contact</a></li>
@@ -59,7 +71,7 @@
     </nav>
 
     <div class="mt-4">
-      <div class=" m-auto bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <div class="m-auto bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 class="text-2xl font-bold mb-6">Sign Up</h2>
         <form id="signup-form" class="space-y-4">
           <div>
