@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+      .hamBurger {
+        position: relative;
+        display: inline-block;
+        transition: transform 0.15s;
+      }
+      .hamBurger::before,
+      .hamBurger::after {
+        content: "";
+        position: absolute;
+        width: 4rem;
+        height: 0.5rem;
+        background-color: black;
+        border-radius: 9999px;
+        transition: all 0.15s;
+      }
+      .hamBurger::before {
+        transform: translateY(-1rem);
+      }
+      .hamBurger::after {
+        transform: translateY(1rem);
+      }
+      .hamburger-toggle .hamBurger {
+        transform: rotate(45deg);
+      }
+      .hamburger-toggle .hamBurger::before {
+        transform: rotate(-90deg) translateX(-1rem);
+      }
+      .hamburger-toggle .hamBurger::after {
+        transform: rotate(-90deg) translateX(1rem);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="bg-gray-300 flex flex-row justify-between p-4">
+      <div class="logo w-2/4">
+        <!-- dummy logo  -->
+        <h1 class="ml-4">Logo</h1>
+      </div>
+      <div class="navLinks w-2/4 flex flex-row list-none justify-evenly gap-4">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+      </div>
+      <div id="toggleHamburger" class="grid items-center jutify-center">
+        <div class="hamBurger w-16 h-2 bg-black rounded-full"></div>
+      </div>
+    </nav>
+
+    <div class="m-auto">
+      <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6">Sign Up</h2>
+        <form id="signup-form" class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              required
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              required
+            />
+            <p id="email-error" class="error-message hidden">
+              Please enter a valid email address.
+            </p>
+          </div>
+          <div>
+            <label
+              for="password"
+              class="block text-sm font-medium text-gray-700"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="confirm-password"
+              class="block text-sm font-medium text-gray-700"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirm-password"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              required
+            />
+            <p id="password-error" class="error-message hidden">
+              Passwords do not match.
+            </p>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
