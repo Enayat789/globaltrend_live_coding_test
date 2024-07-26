@@ -39,23 +39,27 @@
     </style>
   </head>
   <body>
-    <nav class="bg-gray-300 flex flex-row justify-between p-4">
-      <div class="logo w-2/4">
+    <nav class="bg-gray-300 flex flex-row justify-between">
+      <div class="logo w-2/4  p-4">
         <!-- dummy logo  -->
         <h1 class="ml-4">Logo</h1>
       </div>
-      <div class="navLinks w-2/4 flex flex-row list-none justify-evenly gap-4">
+      <div id="navLinks" class="navLinks w-2/4 h-40 hidden absolute p-4 top-14  w-full bg-gray-400  flex-col sm:h-auto sm:bg-gray-300 sm:relative sm:top-0 sm:flex-row list-none sm:justify-evenly gap-4 sm:flex  ">
         <li><a href="">Home</a></li>
         <li><a href="">About</a></li>
         <li><a href="">Contact</a></li>
       </div>
-      <div id="toggleHamburger" class="grid items-center jutify-center">
+
+      <div
+        id="toggleHamburger"
+        class="items-center jutify-center sm:hidden p-4"
+      >
         <div class="hamBurger w-16 h-2 bg-black rounded-full"></div>
       </div>
     </nav>
 
-    <div class="m-auto">
-      <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <div class="mt-4">
+      <div class=" m-auto bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 class="text-2xl font-bold mb-6">Sign Up</h2>
         <form id="signup-form" class="space-y-4">
           <div>
